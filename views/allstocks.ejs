@@ -7,15 +7,17 @@
             <tr>
               <th scope="col">Stock Symbol</th>
               <th scope="col">Details</th>
+              <th scope="col">Graph</th>
             </tr>
         </thead>
 
 
                 <% stocks.forEach(function (stock) { %>
-                    
+
                 <tr>
                     <td> <%= stock %>  </td>
                     <td> <a href="/stock/<%= stock %>"> View </a></td>
+                    <td> <a href="/graph/<%= stock %>"> View </a></td>
                 </tr><!-- note you defined the field as Name not name -->
                 <% }) %>
 

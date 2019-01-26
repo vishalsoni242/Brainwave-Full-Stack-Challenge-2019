@@ -72,11 +72,28 @@ router.get('/stock/:sym', (req,res) => {
     }))();
 });
 
-router.get('/find', (req,res) => {
-    //console.log(req.query.stock);
-    //Data.count({symbol:req.query.stock}, function(err, c) {
-    //});
-    //res.send(n);
+router.get('/graph/:sym', (req,res) => {
+    var name = req.params.sym;
+    (async (function(reqt, rest) {
+      var user = [];
+      var proj = {
+          _id: false,
+          symbol: false,
+      };
+      await (Data.find({symbol: name}, proj, function(err,pro){
+          //user.push(pro);
+
+          res.render('graph', {
+              stock: pro,
+              name: name
+          })
+      }));
+      //console.log(user); //it's define
+        //res.send(user);
+    }))();
+});
+
+router.get('/dfind', (req,res) => {
     var st = (req.query.stock).toUpperCase();
     (async (function(reqt, rest) {
 
@@ -89,10 +106,25 @@ router.get('/find', (req,res) => {
             });
          }
       }));
-      //console.log(user); //it's define
-        //res.send(user);
     }))();
 });
+
+router.get('/gfind', (req,res) => {
+    var st = (req.query.stock).toUpperCase();
+    (async (function(reqt, rest) {
+
+      await (Data.count({symbol: st}, function(err,pro){
+         if(pro != 0) {
+             res.redirect('/graph/' + st);
+         } else {
+            res.render('search', {
+                msg: 'No Stock Found!'
+            });
+         }
+      }));
+    }))();
+});
+
 router.get('/verify', (req,res) => {
     var cnt = 0;
     function getDistinct(name) {
