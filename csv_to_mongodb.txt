@@ -1,0 +1,1 @@
+mongoimport -d Data -c data --type CSV --file prices763fefc.csv --headerline

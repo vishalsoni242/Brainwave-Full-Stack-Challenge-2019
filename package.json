@@ -1,0 +1,21 @@
+{
+  "name": "brainwave",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vishal Soni",
+  "license": "ISC",
+  "dependencies": {
+    "connect-flash": "^0.1.1",
+    "csvtojson": "^2.0.8",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "express-ejs-layouts": "^2.5.0",
+    "express-session": "^1.15.6",
+    "fast-csv": "^2.4.1",
+    "mongoose": "^5.4.6"
+  }
+}
