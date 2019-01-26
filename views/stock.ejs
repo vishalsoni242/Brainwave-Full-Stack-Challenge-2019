@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row mt-5">
+    <label for="Name">Stock Symbol :    <strong><%= name %></strong></label>
+    <table class="table table-hover table-bordered">
+        <thead>
+            <tr>
+              <th scope="col">Date</th>
+              <th scope="col">Open</th>
+              <th scope="col">Close</th>
+              <th scope="col">Low</th>
+              <th scope="col">High</th>
+              <th scope="col">Volume</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        <% stock.forEach(function (st) { %>
+        <tr>
+            <td> <%= st.date %>  </td>
+            <td> <%= st.open %>  </td>
+            <td> <%= st.close %>  </td>
+            <td> <%= st.low %>  </td>
+            <td> <%= st.high %>  </td>
+            <td> <%= st.volume %>  </td>
+        </tr><!-- note you defined the field as Name not name -->
+        <% }) %>
+        </tbody>
+    </table>
+    </div>
+</div>

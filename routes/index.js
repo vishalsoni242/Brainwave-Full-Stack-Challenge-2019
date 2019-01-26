@@ -61,9 +61,25 @@ router.get('/allstocks', (req,res) => {
 
 });
 
-router.get('/print', (req,res) => {
-
-})
+router.get('/stock/:sym', (req,res) => {
+    var name = req.params.sym;
+    (async (function(reqt, rest) {
+      var user = [];
+      var proj = {
+          _id: false,
+          symbol: false
+      };
+      await (Data.find({symbol: name}, proj, function(err,pro){
+          //user.push(pro);
+          res.render('stock', {
+              stock: pro,
+              name: name
+          })
+      }));
+      //console.log(user); //it's define
+        //res.send(user);
+    }))();
+});
 
 router.get('/verify', (req,res) => {
     var cnt = 0;
