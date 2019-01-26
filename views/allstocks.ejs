@@ -1,28 +1,23 @@
 <div class="container">
 
-    <div class="row mt-5">
 
-    <table class="table table-hover table-striped table-bordered table-condensed">
-        <thead>
+    <table class="table table-hover table-bordered table-striped">
+        <thead class="thead-dark">
             <tr>
               <th scope="col">Stock Symbol</th>
               <th scope="col">Details</th>
               <th scope="col">Graph</th>
             </tr>
         </thead>
-
-
                 <% stocks.forEach(function (stock) { %>
-
                 <tr>
                     <td> <%= stock %>  </td>
                     <td> <a href="/stock/<%= stock %>"> View </a></td>
                     <td> <a href="/graph/<%= stock %>"> View </a></td>
-                </tr><!-- note you defined the field as Name not name -->
+                </tr>
                 <% }) %>
 
     </table>
 
-    </div>
 
 </div>

@@ -1,6 +1,11 @@
 <div class="container">
     <div class="row mt-5">
-    <label for="Name">Stock Symbol :    <strong><%= name %></strong></label>
+    <div style="color:green;font-size:20px;">
+        Stock Symbol -
+    </div>
+    <div style="color:blue;font-size:20px;">
+        <p> - <%= name %></p>
+    </div>
     <table class="table table-hover table-bordered">
         <thead>
             <tr>
@@ -22,7 +27,7 @@
             <td> <%= st.low %>  </td>
             <td> <%= st.high %>  </td>
             <td> <%= st.volume %>  </td>
-        </tr><!-- note you defined the field as Name not name -->
+        </tr>
         <% }) %>
         </tbody>
     </table>

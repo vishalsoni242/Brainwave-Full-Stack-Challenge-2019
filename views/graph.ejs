@@ -9,8 +9,6 @@
          data.addColumn('number', 'Price');
          <% stock.forEach(function(st) { %>
             var dt = '<%= st.date %>';
-            //var date = new Date(dt);
-            //console.log(dt);
              data.addRow([new Date(dt), <%= st.close %>]);
          <% }) %>
 
@@ -30,4 +28,12 @@
          chart.draw(data, options);
        }
  </script>
+ <div class="container">
+     <div class="row mt-5">
+     <div style="color:blue;font-size:20px;">
+         <p class="text-center"> Stock Symbol - <%= name %></p>
+     </div>
+ </div>
+ </div>
+
  <div id="chart_div"></div>
