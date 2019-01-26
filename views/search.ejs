@@ -1,8 +1,13 @@
 <div class="container">
-    <div class="perfect-centering">
-        <form class="form-inline md-form mr-auto mb-4">
-          <input class="form-control" type="text" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-warning btn-rounded btn-sm my-0" type="submit">Search</button>
-        </form>
+    <div class="perfect-centering the-basics">
+        <div class="alert" style="color:red;">
+             <%= msg %>
+        </div>
+    <h1>Search Stock</h1>
+    <form class="form-inline md-form mr-auto mb-4" action="/find" method="get">
+        <input type="text" name="stock" value="Enter Stock Symbol" class="form-control typeahead">
+        <button class="btn btn-outline-warning btn-rounded btn-sm my-0" type="submit">Search</button>
+    </form>
+
     </div>
 </div>

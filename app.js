@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const flash = require('connect-flash');
 const expressLayouts = require('express-ejs-layouts');
+var bodyParser = require('body-parser')
 const session = require('express-session');
 
 const app = express();
@@ -25,6 +26,9 @@ app.use(flash());
 
 // Express body parser
 app.use(express.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: false }));
+
+
 
 app.use(express.static( "public" ));
 
