@@ -1,6 +1,5 @@
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
- <script type="text/javascript">
-
+<script type="text/javascript">
      google.charts.load('current', {packages: ['corechart', 'line']});
      google.charts.setOnLoadCallback(drawBasic);
    function drawBasic() {
@@ -18,9 +17,8 @@
            },
            vAxis: {
              title: 'Price'
-         },
-         'width': 1500,
-         'heigth' :800
+         }
+
          };
 
          var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
@@ -29,11 +27,12 @@
        }
  </script>
  <div class="container">
-     <div class="row mt-5">
      <div style="color:blue;font-size:20px;">
-         <p class="text-center"> Stock Symbol - <%= name %></p>
+         <div class="text-center">
+             <br>
+             <p style="color:yellow;font-size:20px;">Stock Name - <%= name %></p>
+         </div>
      </div>
- </div>
  </div>
 
  <div id="chart_div"></div>
